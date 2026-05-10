@@ -92,15 +92,15 @@ function AdvantageCard({ item, index, variants }: { item: typeof ADVANTAGES[0]; 
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
       className="glass-card rounded-[2rem] overflow-hidden group cursor-default relative">
       <div className={`absolute inset-0 bg-gradient-to-br ${item.gradFrom} ${item.gradTo} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-      <div className="relative z-10 p-8 md:p-10 h-full flex flex-col">
-        <div className="flex items-start justify-between mb-6">
-          <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Icon className={`w-7 h-7 ${item.color}`} />
+      <div className="relative z-10 p-5 md:p-8 lg:p-10 h-full flex flex-col">
+        <div className="flex items-start justify-between mb-5">
+          <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Icon className={`w-6 h-6 md:w-7 md:h-7 ${item.color}`} />
           </div>
-          <div className={`text-6xl font-black ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500 leading-none`}>{item.label}</div>
+          <div className={`text-5xl md:text-6xl font-black ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500 leading-none`}>{item.label}</div>
         </div>
         <div className={`text-xs font-black tracking-widest uppercase mb-3 ${item.color}`}>{item.label}</div>
-        <h3 className="text-2xl font-black mb-3">{item.title}</h3>
+        <h3 className="text-xl md:text-2xl font-black mb-3">{item.title}</h3>
         <p className="text-muted-foreground leading-relaxed flex-1">{item.desc}</p>
       </div>
     </motion.div>
@@ -117,14 +117,14 @@ function AdvantagesGrid({ openInvest: _openInvest }: { openInvest: (pkg?: string
         whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
         className="glass-card rounded-[2rem] overflow-hidden group cursor-default relative">
         <div className={`absolute inset-0 bg-gradient-to-br ${first.gradFrom} ${first.gradTo} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-        <div className="relative z-10 p-10 md:p-14 flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-20 h-20 rounded-3xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-            <Icon0 className={`w-10 h-10 ${first.color}`} />
+        <div className="relative z-10 p-5 md:p-10 lg:p-14 flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+            <Icon0 className={`w-8 h-8 md:w-10 md:h-10 ${first.color}`} />
           </div>
           <div className="flex-1">
             <div className={`text-xs font-black tracking-widest uppercase mb-3 ${first.color}`}>{first.label}</div>
-            <h3 className="text-3xl md:text-4xl font-black mb-4">{first.title}</h3>
-            <p className="text-xl text-muted-foreground leading-relaxed">{first.desc}</p>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 md:mb-4">{first.title}</h3>
+            <p className="text-base md:text-xl text-muted-foreground leading-relaxed">{first.desc}</p>
           </div>
           <div className={`text-[120px] font-black ${first.color} opacity-[0.06] group-hover:opacity-[0.15] transition-opacity duration-500 shrink-0 hidden lg:block leading-none`}>01</div>
         </div>
@@ -377,7 +377,7 @@ export default function Landing() {
       </nav>
 
       {/* HERO */}
-      <section className="pt-32 pb-20 lg:pt-44 lg:pb-28 px-4 relative">
+      <section className="pt-24 pb-10 lg:pt-44 lg:pb-28 px-4 relative">
         <div className="container mx-auto relative z-10 flex flex-wrap gap-3 mb-4 lg:hidden">
           <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-bold">Pre-Seed</div>
           <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground text-sm">$1 000 000 целевой объём</div>
@@ -386,8 +386,8 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={fadeIn} className="space-y-8 order-2 lg:order-1">
+        <div className="container mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+          <motion.div initial="hidden" animate="visible" variants={fadeIn} className="space-y-6 lg:space-y-8 order-1 lg:order-1">
             <div className="hidden lg:flex flex-wrap gap-3">
               <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-bold">Pre-Seed</div>
               <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground text-sm">$1 000 000 целевой объём</div>
@@ -396,7 +396,7 @@ export default function Landing() {
               </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
               Trends — первый <span className="text-gradient">Reels</span> внутри Telegram
             </h1>
 
@@ -499,14 +499,14 @@ export default function Landing() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 0.2 }}
             style={{ y: heroY }}
-            className="relative flex items-center justify-center order-1 lg:order-2"
+            className="relative flex items-center justify-center order-2 lg:order-2"
           >
             {/* Glowing halo behind phone */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <motion.div
                 animate={{ scale: [1, 1.12, 1], opacity: [0.3, 0.55, 0.3] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="w-64 h-64 rounded-full bg-primary blur-[80px]"
+                className="w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-primary blur-[80px]"
               />
             </div>
             <motion.img
@@ -514,7 +514,7 @@ export default function Landing() {
               alt="Trends App"
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 max-h-[85vh] w-full object-contain drop-shadow-2xl"
+              className="relative z-10 max-h-[45vh] sm:max-h-[55vh] lg:max-h-[85vh] w-full object-contain drop-shadow-2xl"
             />
           </motion.div>
         </div>
@@ -542,11 +542,11 @@ export default function Landing() {
       </section>
 
       {/* WHAT IS TRENDS */}
-      <section className="py-24 relative">
+      <section className="py-14 md:py-24 relative">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerChildren}
-              className="space-y-6 order-2 lg:order-1">
+              className="space-y-6 order-1 lg:order-1">
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black">
                 Что такое <span className="text-gradient">Trends</span>?
               </motion.h2>
@@ -600,22 +600,22 @@ export default function Landing() {
               </motion.div>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}
-              className="relative flex justify-center order-1 lg:order-2">
+              className="relative flex justify-center order-2 lg:order-2">
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-64 h-64 rounded-full bg-secondary/20 blur-[80px]" />
+                <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-secondary/20 blur-[80px]" />
               </div>
-              <img src={screenAppPath} alt="Trends App" className="relative z-10 max-h-[620px] w-auto object-contain drop-shadow-2xl" />
+              <img src={screenAppPath} alt="Trends App" className="relative z-10 max-h-[320px] lg:max-h-[620px] w-auto object-contain drop-shadow-2xl" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* PROBLEM → SOLUTION */}
-      <section id="problem" className="py-24 relative">
+      <section id="problem" className="py-14 md:py-24 relative">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp}
             className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">Огромный рынок пуст</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">Огромный рынок пуст</h2>
             <p className="text-lg text-muted-foreground">Telegram вырос до 1 миллиарда пользователей, но в нём до сих пор нет главного формата потребления контента — бесконечной ленты коротких видео.</p>
           </motion.div>
 
@@ -671,21 +671,21 @@ export default function Landing() {
       </section>
 
       {/* MVP */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-14 md:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft}
-              className="relative flex justify-center">
-              <img src={screen3Path} alt="Trends MVP" className="relative z-10 max-h-[620px] object-contain drop-shadow-2xl" />
+              className="relative flex justify-center order-2 lg:order-1">
+              <img src={screen3Path} alt="Trends MVP" className="relative z-10 max-h-[320px] lg:max-h-[620px] object-contain drop-shadow-2xl" />
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerChildren} className="space-y-8">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerChildren} className="space-y-6 lg:space-y-8 order-1 lg:order-2">
               <motion.div variants={fadeRight} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-bold tracking-wide">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 ПРОДУКТ УЖЕ РАБОТАЕТ
               </motion.div>
-              <motion.h2 variants={fadeRight} className="text-4xl md:text-6xl font-black leading-tight">MVP готов и <span className="text-gradient">запущен</span></motion.h2>
-              <motion.p variants={fadeRight} className="text-xl text-muted-foreground">Мы не продаём идею. Мы привлекаем капитал для масштабирования уже работающей инфраструктуры.</motion.p>
+              <motion.h2 variants={fadeRight} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight">MVP готов и <span className="text-gradient">запущен</span></motion.h2>
+              <motion.p variants={fadeRight} className="text-base md:text-xl text-muted-foreground">Мы не продаём идею. Мы привлекаем капитал для масштабирования уже работающей инфраструктуры.</motion.p>
 
               <motion.div variants={staggerFast} className="space-y-4">
                 {[
@@ -716,7 +716,7 @@ export default function Landing() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Продукт <span className="text-gradient">Trends</span></h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Продукт <span className="text-gradient">Trends</span></h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Полноценная лента вертикальных видео прямо внутри Telegram — контент от тысяч авторов, персонализированная выдача.</p>
           </motion.div>
 
@@ -741,11 +741,11 @@ export default function Landing() {
       </section>
 
       {/* MONETIZATION */}
-      <section id="monetization" className="py-24 relative">
+      <section id="monetization" className="py-14 md:py-24 relative">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
             className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">7 источников монетизации</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">7 источников монетизации</h2>
             <p className="text-lg text-muted-foreground">Диверсифицированная бизнес-модель — рост любого источника усиливает общую экономику платформы.</p>
           </motion.div>
 
@@ -796,12 +796,12 @@ export default function Landing() {
       </section>
 
       {/* 5 INVESTOR ADVANTAGES */}
-      <section id="investors" className="py-32 relative overflow-hidden">
+      <section id="investors" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-            className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-6">5 преимуществ инвестора</h2>
-            <p className="text-xl text-muted-foreground">Беспрецедентные условия для тех, кто заходит на стадии Pre-Seed. Инвестор зарабатывает вместе с платформой каждый день.</p>
+            className="text-center max-w-4xl mx-auto mb-10 md:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6">5 преимуществ инвестора</h2>
+            <p className="text-base md:text-xl text-muted-foreground">Беспрецедентные условия для тех, кто заходит на стадии Pre-Seed. Инвестор зарабатывает вместе с платформой каждый день.</p>
           </motion.div>
 
           <AdvantagesGrid openInvest={openInvest} />
@@ -809,14 +809,14 @@ export default function Landing() {
       </section>
 
       {/* INVESTMENT PACKAGES */}
-      <section className="py-24">
+      <section className="py-14 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Инвестиционные пакеты</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Инвестиционные пакеты</h2>
             <p className="text-lg text-muted-foreground">Выберите свой уровень участия. Все пакеты включают RevShare, токены $TRND и партнёрскую программу.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
             {PACKAGES_DATA.map((pkg, i) => (
               <motion.div key={pkg.id} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
                 whileHover={{ y: pkg.recommended ? -6 : -4, transition: { duration: 0.25 } }}
@@ -897,7 +897,7 @@ export default function Landing() {
       </section>
 
       {/* MLM */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-14 md:py-24 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-green-500/8 blur-[120px] rounded-full pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
@@ -906,7 +906,7 @@ export default function Landing() {
               <Network className="w-4 h-4" />
               ПАРТНЁРСКАЯ ПРОГРАММА
             </div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6">Партнёрская программа — зарабатывай на привлечении</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6">Партнёрская программа — зарабатывай на привлечении</h2>
             <p className="text-lg text-muted-foreground">Приглашайте новых инвесторов и получайте процент от их вложений на 5 уровней вглубь.</p>
           </motion.div>
 
@@ -946,7 +946,7 @@ export default function Landing() {
                 <DollarSign className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Пример: Пакет Основателей 5 — $25,000</h3>
+                <h3 className="text-lg md:text-2xl font-bold">Пример: Пакет Основателей 5 — $25,000</h3>
                 <p className="text-sm text-muted-foreground">Вы вложили $25,000 и начали приглашать партнёров</p>
               </div>
             </div>
@@ -1002,10 +1002,10 @@ export default function Landing() {
       </section>
 
       {/* ROADMAP */}
-      <section id="roadmap" className="py-24 overflow-hidden">
+      <section id="roadmap" className="py-14 md:py-24 overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Roadmap</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Roadmap</h2>
             <p className="text-lg text-muted-foreground">Запуск в 2026 — путь к глобальному масштабу</p>
           </motion.div>
 
@@ -1076,7 +1076,7 @@ export default function Landing() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Команда</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Команда</h2>
             <p className="text-lg text-muted-foreground">Опытные специалисты с глубокой экспертизой в Telegram, IT и продукте</p>
           </motion.div>
 
